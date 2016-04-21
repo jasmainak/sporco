@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>SPORCO by bwohlberg</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/bwohlberg/sporco">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/bwohlberg/sporco/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/bwohlberg/sporco/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>SPORCO</h1>
+          <p>Sparse Optimisation Research Code</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/bwohlberg">bwohlberg</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="sparse-optimization-research-code-sporco" class="anchor" href="#sparse-optimization-research-code-sporco" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SParse Optimization Research COde (SPORCO)</h1>
+
+<p>SPORCO is a Python package for solving optimisation problems with
+sparsity-inducing regularisation. These consist primarily of sparse
+coding and dictionary learning problems, including convolutional
+sparse coding and dictionary learning, but there is also support for
+other problems such as Total Variation regularisation and Robust
+PCA. In the current version all of the optimisation algorithms are
+based on the Alternating Direction Method of Multipliers (ADMM).</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>The primary requirements are Python itself (SPORCO has only been
+tested on version 2.7), and modules scipy, numpy, pyfftw, and
+matplotlib. Module numexpr is not required, but some functions will be
+faster if it is installed.</p>
+
+<p>Installation of these requirements is system dependent. Under a recent
+version of Ubuntu Linux, the following commands should be sufficient:</p>
+
+<pre><code>sudo apt-get install python-numpy
+sudo apt-get install python-scipy
+sudo apt-get install python-matplotlib
+sudo apt-get install python-pip
+sudo apt-get install libfftw3-dev
+sudo pip install pyfftw
+</code></pre>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<pre><code>python setup.py build
+python setup.py install
+</code></pre>
+
+<p>The install command will usually have to be performed with root permissions.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Scripts illustrating usage of the package can be found in the
+<code>examples</code> directory. These examples can be run from the root
+directory of the package by, for example</p>
+
+<pre><code>python examples/demo_bpdn.py
+</code></pre>
+
+<p>To run these scripts prior to installing the package it will be
+necessary to first set the <code>PYTHONPATH</code> environment variable to
+include the root directory of the package. For example, in a <code>bash</code>
+shell</p>
+
+<pre><code>export PYTHONPATH=$PYTHONPATH:`pwd`
+</code></pre>
+
+<p>from the root directory of the package.</p>
+
+<h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>If the source has been obtained from a source distribution package
+then HTML documentation can be built in the <code>build/sphinx/html</code>
+directory (the top-level document is <code>index.html</code>) by the command</p>
+
+<pre><code>python setup.py build_sphinx
+</code></pre>
+
+<p>If the source has been cloned from the project github, it is necessary
+to first issue the command</p>
+
+<pre><code>sphinx-apidoc --separate -d 2 -o source ../sporco modules.rst
+</code></pre>
+
+<p>within the <code>docs</code> directory.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This package is distributed with a BSD license; see the <code>LICENSE</code>
+file for details.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
