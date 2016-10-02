@@ -1,96 +1,130 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>SPORCO by bwohlberg</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/bwohlberg/sporco">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/bwohlberg/sporco/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/bwohlberg/sporco/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">SPORCO</h1>
+      <h2 class="project-tagline">Sparse Optimisation Research Code</h2>
+      <a href="https://github.com/bwohlberg/sporco" class="btn">View on GitHub</a>
+      <a href="https://github.com/bwohlberg/sporco/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/bwohlberg/sporco/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>SPORCO</h1>
-          <p>Sparse Optimisation Research Code</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/bwohlberg">bwohlberg</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="sparse-optimization-research-code-sporco" class="anchor" href="#sparse-optimization-research-code-sporco" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>SParse Optimization Research COde (SPORCO)</h1>
+
+<p><img src="https://travis-ci.org/bwohlberg/sporco.svg?branch=master%0A%20:target:%20https://travis-ci.org/bwohlberg/sporco%0A%20:alt:%20Build%20Status" alt="image"></p>
+
+<p><a href="https://landscape.io/github/bwohlberg/sporco/master"><img src="https://landscape.io/github/bwohlberg/sporco/master/landscape.svg?style=flat" alt="Code Health"></a></p>
+
+<p><img src="https://readthedocs.org/projects/sporco/badge/?version=latest%0A%20:target:%20http://sporco.readthedocs.io/en/latest/?badge=latest%0A%20:alt:%20Documentation%20Status" alt="image"></p>
+
+<p><img src="https://badge.fury.io/py/sporco.svg%0A%20:target:%20https://badge.fury.io/py/sporco%0A%20:alt:%20PyPi%20Release" alt="image"></p>
 
 <p>SPORCO is a Python package for solving optimisation problems with
 sparsity-inducing regularisation. These consist primarily of sparse
-coding and dictionary learning problems, including convolutional
-sparse coding and dictionary learning, but there is also support for
-other problems such as Total Variation regularisation and Robust
-PCA. In the current version all of the optimisation algorithms are
-based on the Alternating Direction Method of Multipliers (ADMM).</p>
+coding and dictionary learning problems, including convolutional sparse
+coding and dictionary learning, but there is also support for other
+problems such as Total Variation regularisation and Robust PCA. In the
+current version all of the optimisation algorithms are based on the
+Alternating Direction Method of Multipliers (ADMM).</p>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 
-<p>The primary requirements are Python itself (SPORCO has only been
-tested on version 2.7), and modules scipy, numpy, pyfftw, and
-matplotlib. Module numexpr is not required, but some functions will be
-faster if it is installed.</p>
+<p>The primary requirements are Python itself, and modules
+<a href="http://www.numpy.org">numpy</a>, <a href="https://www.scipy.org">scipy</a>,
+<a href="http://python-future.org">future</a>,
+<a href="https://hgomersall.github.io/pyFFTW">pyfftw</a>, and
+<a href="http://matplotlib.org">matplotlib</a>. Module
+<a href="https://github.com/pydata/numexpr">numexpr</a> is not required, but some
+functions will be faster if it is installed. If module
+<a href="https://github.com/joferkington/mpldatacursor">mpldatacursor</a> is
+installed, function util.plot will support the data cursor that it
+provides.</p>
 
 <p>Installation of these requirements is system dependent. Under a recent
-version of Ubuntu Linux, the following commands should be sufficient:</p>
+version of Ubuntu Linux, the following commands should be sufficient for
+Python 2</p>
 
-<pre><code>sudo apt-get install python-numpy
-sudo apt-get install python-scipy
-sudo apt-get install python-matplotlib
-sudo apt-get install python-pip
-sudo apt-get install libfftw3-dev
+<pre><code>sudo apt-get install python-numpy python-scipy python-numexpr
+sudo apt-get install python-matplotlib python-pip libfftw3-dev
+sudo pip install future
 sudo pip install pyfftw
+</code></pre>
+
+<p>or Python 3</p>
+
+<pre><code>sudo apt-get install python3-numpy python3-scipy python3-numexpr
+sudo apt-get install python3-matplotlib python3-pip libfftw3-dev 
+sudo pip3 install future
+sudo pip3 install pyfftw
+</code></pre>
+
+<p>Some additional dependencies are required for running the unit tests or
+building the documentation from the package source. Under a recent
+version of Ubuntu Linux, the following commands should be sufficient for
+Python 2</p>
+
+<pre><code>sudo apt-get install python-pytest python-numpydoc
+sudo pip install pytest-runner
+sudo pip install sphinxcontrib-bibtex
+</code></pre>
+
+<p>or Python 3</p>
+
+<pre><code>sudo apt-get install python3-pytest python3-numpydoc
+sudo pip3 install pytest-runner
+sudo pip3 install sphinxcontrib-bibtex
 </code></pre>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<pre><code>python setup.py build
+<p>To install the most recent release of SPORCO from
+<a href="https://pypi.python.org/pypi/sporco/">PyPI</a> do</p>
+
+<pre><code>pip install sporco
+</code></pre>
+
+<p>To install the development version from
+<a href="https://github.com/bwohlberg/sporco">GitHub</a> do</p>
+
+<pre><code>git clone git://github.com/bwohlberg/sporco.git
+</code></pre>
+
+<p>followed by</p>
+
+<pre><code>cd sporco
+python setup.py build
 python setup.py install
 </code></pre>
 
-<p>The install command will usually have to be performed with root permissions.</p>
+<p>The install command will usually have to be performed with root
+permissions.</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Scripts illustrating usage of the package can be found in the
-<code>examples</code> directory. These examples can be run from the root
-directory of the package by, for example</p>
+<p>Scripts illustrating usage of the package can be found in the <code>examples</code>
+directory of the source distribution. These examples can be run from the
+root directory of the package by, for example</p>
 
 <pre><code>python examples/demo_bpdn.py
 </code></pre>
 
 <p>To run these scripts prior to installing the package it will be
-necessary to first set the <code>PYTHONPATH</code> environment variable to
-include the root directory of the package. For example, in a <code>bash</code>
-shell</p>
+necessary to first set the <code>PYTHONPATH</code> environment variable to include
+the root directory of the package. For example, in a <code>bash</code> shell</p>
 
 <pre><code>export PYTHONPATH=$PYTHONPATH:`pwd`
 </code></pre>
@@ -100,30 +134,36 @@ shell</p>
 <h2>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p>If the source has been obtained from a source distribution package
-then HTML documentation can be built in the <code>build/sphinx/html</code>
-directory (the top-level document is <code>index.html</code>) by the command</p>
+<p>Documentation is available online at <a href="http://sporco.rtfd.io/">Read the
+Docs</a>, or can be built from the root directory
+of the source distribution by the command</p>
 
 <pre><code>python setup.py build_sphinx
 </code></pre>
 
-<p>If the source has been cloned from the project github, it is necessary
-to first issue the command</p>
-
-<pre><code>sphinx-apidoc --separate -d 2 -o source ../sporco modules.rst
-</code></pre>
-
-<p>within the <code>docs</code> directory.</p>
+<p>in which case the HTML documentation can be found in the
+<code>build/sphinx/html</code> directory (the top-level document is <code>index.html</code>).</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>This package is distributed with a BSD license; see the <code>LICENSE</code>
-file for details.</p>
-      </section>
+<p>This package is distributed with a BSD license; see the <code>LICENSE</code> file
+for details.</p>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+<h2>
+<a id="acknowledgments" class="anchor" href="#acknowledgments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Acknowledgments</h2>
+
+<p>Thanks to Aric Hagberg for valuable advice on python packaging,
+documentation, and related issues.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/bwohlberg/sporco">SPORCO</a> is maintained by <a href="https://github.com/bwohlberg">bwohlberg</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
